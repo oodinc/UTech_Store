@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UTech Store</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <!-- font link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
@@ -21,11 +22,11 @@
 
     <nav class="navbar">
         <a class="active" href="#home">home</a>
-        <a href="#dishes">dishes</a>
-        <a href="#about">about</a>
+        <a href="#dishes">informasi</a>
+        <a href="#about">tentang</a>
         <a href="#menu">menu</a>
-        <a href="#review">review</a>
-        <a href="#order">order</a>
+        <a href="#review">ulasan</a>
+        <a href="#order">pesan</a>
     </nav>
 
     <div class="icons">
@@ -46,8 +47,568 @@
     <i class="fas fa-times" id="close"></i>
 </form>
 
+<!-- home section start -->
+
+<section class="home" id="home">
+    <div class="swiper mySwiper home-slider">
+        <div class="swiper-wrapper wrapper">
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>hidangan spesial</span>
+                    <h3 /*style="font-size: 3.5rem;"*/>aneka jus buah</h3>
+                </div>
+                <div class="image">
+                    <img src="img/1.png" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>hidangan spesial</span>
+                    <h3>rujak buah</h3>
+                </div>
+                <div class="image">
+                    <img src="img/rujak buah.png" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>hidangan spesial</span>
+                    <h3>salad buah</h3>
+                </div>
+                <div class="image">
+                    <img src="img/salad buah.png" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>hidangan spesial</span>
+                    <h3>sop buah</h3>
+                </div>
+                <div class="image">
+                    <img src="img/sop buah.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+<!-- home section end -->
+
+<!-- dishes section start -->
+<section class="dishes" id="dishes">
+    <h3 class="sub-heading">informasi</h3>
+    <h3 class="heading">hidangan favorit</h3>
+
+    <div class="box-container">
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#jus-apel" class="fas fa-eye"></a>
+            <img src="img/jus apel.png" alt="">
+            <h3>Jus Apel</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span>Rp7.000</span>
+            <a href="#" class="btn">pesan sekarang</a>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#jus-alpukat" class="fas fa-eye"></a>
+            <img src="img/jus alpukat.png" alt="">
+            <h3>Jus Alpukat</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span>Rp7.000</span>
+            <a href="#" class="btn">pesan sekarang</a>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#sop-buah" class="fas fa-eye"></a>
+            <img src="img/sop buah.png" alt="">
+            <h3>Sop Buah</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span>Rp10.000</span>
+            <a href="#" class="btn">pesan sekarang</a>
+        </div>
+
+        
+    </div>
+</section>
+<!-- dishes section end -->
+
+<!-- about section start  -->
+    <section class="about" id="about">
+        <h3 class="sub-heading">tentang kami</h3>
+        <h1 class="heading">mengapa memilih kami?</h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="img/12.png" alt="">
+            </div>
+            <div class="content">
+                <h3>minuman segar dan sehat</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore ipsa nesciunt quasi hic adipisci, accusamus molestias rerum nisi, veniam quos asperiores similique temporibus aliquam nobis, autem saepe possimus fugit quas?</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, perspiciatis tenetur. Quia, cumque ad! Corrupti, similique! Nam dolore vitae provident!</p>
+                <div class="icons-container">
+                    <div class="icons">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>free delivery (COD)</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-motorcycle"></i>
+                        <span>pengiriman cepat</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-money-bill"></i>
+                        <span>gratis ongkir</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- about section end  -->
+
+<!-- menu section start  -->
+<section class="menu" id="menu">
+    <h3 class="sub-heading">menu kami</h3>
+    <h1 class="heading">rasakan kesegarannya</h1>
+
+    <div class="box-container">
+        <div class="box" id="jus-alpukat">
+            <div class="image">
+                <img src="img/jus alpukat.png" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>Jus Alpukat</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+                <a href="#" class="btn">tambahkan ke keranjang</a>
+                <span class="price">Rp7000</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image" id="jus-apel">
+                <img src="img/jus apel.png" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>jus apel</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+                <a href="#" class="btn">tambahkan ke keranjang</a>
+                <span class="price">Rp7000</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="img/jus jambu.png" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>jus jambu</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+                <a href="#" class="btn">tambahkan ke keranjang</a>
+                <span class="price">Rp7000</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="img/jus jeruk.png" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>jus jeruk</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+                <a href="#" class="btn">tambahkan ke keranjang</a>
+                <span class="price">Rp7000</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="img/jus nanas.png" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>jus nanas</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+                <a href="#" class="btn">tambahkan ke keranjang</a>
+                <span class="price">Rp7000</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="img/jus semangka.png" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>jus semangka</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+                <a href="#" class="btn">tambahkan ke keranjang</a>
+                <span class="price">Rp7000</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="img/jus stroberi.png" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>jus stroberi</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+                <a href="#" class="btn">tambahkan ke keranjang</a>
+                <span class="price">Rp7000</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="img/rujak buah.png" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>rujak buah</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+                <a href="#" class="btn">tambahkan ke keranjang</a>
+                <span class="price">Rp7000</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="img/salad buah.png" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>salad buah</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+                <a href="#" class="btn">tambahkan ke keranjang</a>
+                <span class="price">Rp7000</span>
+            </div>
+        </div>
+
+        <div class="box" id="sop-buah">
+            <div class="image">
+                <img src="img/sop buah.png" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>sop buah</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+                <a href="#" class="btn">tambahkan ke keranjang</a>
+                <span class="price">Rp7000</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- menu section start  -->
+
+<!-- review section start -->
+<section class="review" id="review">
+    <h3 class="sub-heading">ulasan pelanggan</h3>
+    <h1 class="heading">apa yang mereka katakan?</h1>
+
+        <div class="swiper mySwiper review-slider">
+            <div class="swiper-wrapper wrapper">
+                
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="img/13.png" alt="">
+                        <div class="user-info">
+                            <h3>dominic tottero</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, nemo dolor. Libero rerum voluptates officiis ullam architecto, eius assumenda asperiores nostrum nisi! Dignissimos molestiae animi ad porro atque cumque ipsam!</p>
+                </div>
+                
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="img/14.png" alt="">
+                        <div class="user-info">
+                            <h3>aulia</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, nemo dolor. Libero rerum voluptates officiis ullam architecto, eius assumenda asperiores nostrum nisi! Dignissimos molestiae animi ad porro atque cumque ipsam!</p>
+                </div>
+                
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="img/15.png" alt="">
+                        <div class="user-info">
+                            <h3>peter parkur</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>                            </div>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, nemo dolor. Libero rerum voluptates officiis ullam architecto, eius assumenda asperiores nostrum nisi! Dignissimos molestiae animi ad porro atque cumque ipsam!</p>
+                </div>
+                
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="img/16.png" alt="">
+                        <div class="user-info">
+                            <h3>tissu</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>                            </div>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, nemo dolor. Libero rerum voluptates officiis ullam architecto, eius assumenda asperiores nostrum nisi! Dignissimos molestiae animi ad porro atque cumque ipsam!</p>
+                </div>
+
+            </div>
+        </div>
+</section>
+<!-- review section end -->
+
+<!-- oder section start -->
+<section class="order" id="order">
+    <h3 class="sub-heading">pesan sekarang</h3>
+    <h1 class="heading">pengiriman cepat & gratis ongkir</h1>
+
+    <form action="">
+        <div class="inputBox">
+            <div class="input">
+                <span>nama</span>
+                <input type="text" placeholder="masukkan nama">
+            </div>
+            <div class="input">
+                <span>no. whatsapp</span>
+                <input type="text" placeholder="masukkan nomor">
+            </div>
+        </div>
+
+        <div class="inputBox">
+            <div class="input">
+                <span>pesananmu</span>
+                <input type="text" placeholder="masukkan nama pesanan">
+            </div>
+            <div class="input">
+                <span>tambahan</span>
+                <input type="test" placeholder="masukkan tambahan">
+            </div>
+        </div>
+
+        <div class="inputBox">
+            <div class="input">
+                <span>jumlah pesanan</span>
+                <input type="number" placeholder="masukkan jumlah pesanan">
+            </div>
+            <div class="input">
+                <span>tanggal dan waktu</span>
+                <input type="datetime-local">
+            </div>
+        </div>
+
+        <div class="inputBox">
+            <div class="input">
+                <span>alamat</span>
+                <textarea name="" placeholder="masukkan alamat" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="input">
+                <span>catatan</span>
+                <textarea name="" placeholder="masukkan catatan" id="" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        
+        <input type="submit" value="pesan sekarang" class="btn">
+
+    </form>
+</section>
+<!-- oder section start -->
+
+<!-- footer section start-->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>lokasi</h3>
+            <a href="">jawa</a>
+            <a href="">sumatra</a>
+            <a href="">kalimantan</a>
+            <a href="">sulawesi</a>
+            <a href="">papua</a>
+        </div>
+
+        <div class="box">
+            <h3>quick link</h3>
+            <a href="#home">home</a>
+            <a href="#dishes">informasi</a>
+            <a href="#about">tentang</a>
+            <a href="#menu">menu</a>
+            <a href="#review">ulasan</a>
+            <a href="#order">pesan</a>
+        </div>
+
+        <div class="box">
+            <h3>contact person</h3>
+            <a href="http://www.wasap.my/6281909561200" target="_blank">+62 819 0956 1200</a>
+            <a href="https://www.instagram.com/direct/t/340282366841710300949128165706432124526" target="_blank">@m_saifuddin711</a>
+            <a href="mailto:masoodinc1@gmail.com" target="_blank">masoodinc1@gmail.com</a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.instagram.com/m_saifuddin711" target="_blank">instagram</a>
+            <a href="https://www.facebook.com/pedangagama.islam.7/" target="_blank">facebook</a>
+            <a href="https://github.com/oodinc" target="_blank">gitHub</a>
+        </div>
+    </div>
+
+    <div class="credit">copyright @2022 by <span>Udin Technology</span></div>
+</section>
+<!-- footer section end-->
+
+<!-- loader start -->
+<div class="loader-container">
+    <img src="img/17.gif" alt="">
+</div>
+<!-- loader start -->
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <!-- link js -->
 <script src="js/script.js"></script>
 
