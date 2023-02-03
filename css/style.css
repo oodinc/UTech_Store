@@ -188,7 +188,7 @@ header .icons #menu-bars{
     flex-wrap: wrap;
     gap: 2rem;
     padding-top: 9rem;
-    padding-bottom: 6rem;
+    padding-bottom: 6.5rem;
 }
 
 .home .home-slider .slide .content{
@@ -293,7 +293,7 @@ header .icons #menu-bars{
 
 .dishes .box-container .box .stars i{
     font-size: 1.7rem;
-    color: var(--green);
+    color: gold;
 }
 
 .dishes .box-container .box span{
@@ -365,13 +365,13 @@ header .icons #menu-bars{
     color: var(--black);
 }
 
-.menu .box-container{
+.order .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;
 }
 
-.menu .box-container .box{
+.order .box-container .box{
     padding: 1.5rem;
     background: #fff;
     border-radius: .5rem;
@@ -382,12 +382,12 @@ header .icons #menu-bars{
     text-align: center;
 }
 
-.menu .box-container .box .image img{
+.order .box-container .box .image img{
     height: 17rem;
     margin: 1rem 0;
 }
 
-.menu .box-container .box .image .fa-heart{
+.order .box-container .box .image .fa-heart{
     position: absolute;
     top: 1.5rem;
     right: 2.5rem;
@@ -401,41 +401,97 @@ header .icons #menu-bars{
     color: var(--black);
 }
 
-.menu .box-container .box .image .fa-heart:hover{
+.order .box-container .box .image .fa-heart:hover{
     background-color: var(--green);
     color: #fff;
 }
 
-.menu .box-container .box .content{
+.order .box-container .box .content{
     padding: 2rem;
     padding-top: 0;
 }
 
-.menu .box-container .box .content .stars{
+.order .box-container .box .content .stars{
     padding-bottom: 1rem;
 }
 
-.menu .box-container .box .content .stars i{
-    padding-bottom: 1.7rem;
-    color: var(--green);
+.order .box-container .box .content .stars i{
+    font-size: 1.7rem;
+    color: gold;
 }
 
-.menu .box-container .box .content h3{
+.order .box-container .box .content h3{
     color: var(--black);
     font-size: 2.5rem;
 }
 
-.menu .box-container .box .content p{
+.order .box-container .box .content p{
     color: var(--light-color);
     font-size: 1.6rem;
     padding: .5rem 0;
     line-height: 1.5;
 }
 
-.menu .box-container .box .content .price{
+.order .box-container .box .content .price{
     color: var(--green);
     margin-left: 1rem;
     font-size: 2.5rem;
+}
+
+.order form .inputBox{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.order form .inputBox .input{
+    width: 100%;
+}
+
+.order form .inputBox .input span{
+    display: flex;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+.order form .inputBox .input input,
+.order form .inputBox .input textarea{
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: var(--black);
+    text-transform: none;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.order form .inputBox .input input:focus,
+.order form .inputBox .input textarea:focus{
+    border: .1rem solid var(--green);
+}
+
+.order form .inputBox .input textarea{
+    height: 4rem;
+    resize: none;
+}
+
+.order form .btn{
+    margin-top: 0;
+}
+
+.order form.form{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    max-width: 100%;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: .1rem solid rgba(0, 0, 0, .2);
+    background: #fff;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    position: relative;
 }
 
 .review .slide{
@@ -485,59 +541,6 @@ header .icons #menu-bars{
     color: var(--light-color);
 }
 
-.order form{
-    max-width: 90rem;
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    border: .1rem solid rgba(0, 0, 0, .2);
-    background: #fff;
-    padding: 1.5rem;
-    margin: 0 auto;
-}
-
-.order form .inputBox{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.order form .inputBox .input{
-    width: 49%;
-}
-
-.order form .inputBox .input span{
-    display: block;
-    padding: .5rem 0;
-    font-size: 1.5rem;
-    color: var(--light-color);
-}
-
-.order form .inputBox .input input,
-.order form .inputBox .input textarea{
-    background: #eee;
-    border-radius: .5rem;
-    padding: 1rem;
-    font-size: 1.6rem;
-    color: var(--black);
-    text-transform: none;
-    margin-bottom: 1rem;
-    width: 100%;
-}
-
-.order form .inputBox .input input:focus,
-.order form .inputBox .input textarea:focus{
-    border: .1rem solid --green;
-}
-
-.order form .inputBox .input textarea{
-    height: 20rem;
-    resize: none;
-}
-
-.order form .btn{
-    margin-top: 0;
-}
-
 .footer .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -583,7 +586,7 @@ header .icons #menu-bars{
     height: 100%;
     width: 100%;
     z-index: 10000;
-    background: #fff;
+    background: #fcfcff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -628,7 +631,7 @@ header .icons #menu-bars{
 }
 
 @media (max-width:768px){
-    header .icons #menu-bars{
+    header .icons #order-bars{
         display: inline-block;
     }
 
