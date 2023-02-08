@@ -9,8 +9,11 @@
 
     <!-- icon link  -->
     <link rel="icon" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- js swiper link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    
     <!-- font link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
@@ -23,21 +26,20 @@
 
     <!-- header section start -->
     <header>
-        <a href="#" class="logo"><i class="fas fa-store"></i> UTech Store</a>
+        <a href="#home" class="logo"><img src="img/logo.png"> UTech Store</a>
 
         <nav class="navbar">
-            <a class="active" href="#home">home</a>
+            <a class="active" href="#home">beranda</a>
             <a href="#dishes">informasi</a>
             <a href="#about">tentang</a>
-            <a href="#order">order</a>
+            <a href="#order">pesan</a>
             <a href="#review">ulasan</a>
         </nav>
 
         <div class="icons">
-            <i class="fas fa-bars" id="menu-bars"></i>
             <i class="fas fa-search" id="search-icon"></i>
-            <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="fas fa-shopping-cart"></a>
+            <i class="material-icons" style="font-size:14px">rate_review</i>
+            <i class="fas fa-bars" id="menu-bars"></i>
         </div>
 
     </header>
@@ -57,11 +59,11 @@
         <div class="swiper mySwiper home-slider">
             <div class="swiper-wrapper wrapper">
                 <div class="swiper-slide slide">
-                    <div class="content">
+                    <div class="content content1">
                         <span>hidangan spesial</span>
                         <h3>aneka jus buah</h3>
                     </div>
-                    <div class="image">
+                    <div class="image image1">
                         <img src="img/1.png" alt="">
                     </div>
                 </div>
@@ -106,46 +108,7 @@
     <section class="dishes" id="dishes">
         <h3 class="sub-heading">informasi</h3>
         <h3 class="heading">hidangan favorit</h3>
-
-        <div class="box-container">
-            <div class="box">
-                <button onclick="myFunction2()" class="fas fa-heart"></button>
-                <a href="#jus-apel" class="fas fa-eye"></a>
-                <img src="img/jus apel.png" alt="">
-                <h3>Jus Apel</h3>
-                <div class="stars">
-                    <i id="likes1-JusApel" class="fas fa-star" >0</i>
-                </div>
-                <span>Rp7.000</span>
-                <a href="#jus-apel" class="btn">pesan sekarang</a>
-            </div>
-
-            <div class="box">
-                <button onclick="myFunction1()" class="fas fa-heart"></button>
-                <a href="#jus-alpukat" class="fas fa-eye"></a>
-                <img src="img/jus alpukat.png" alt="">
-                <h3>Jus Alpukat</h3>
-                <div class="stars">
-                    <i id="likes1-JusAlpukat" class="fas fa-star" >0</i>
-                </div>
-                <span>Rp7.000</span>
-                <a href="#jus-alpukat" class="btn">pesan sekarang</a>
-            </div>
-
-            <div class="box">
-                <button onclick="myFunction10()" class="fas fa-heart"></button>
-                <a href="#sop-buah" class="fas fa-eye"></a>
-                <img src="img/sop buah.png" alt="">
-                <h3>Sop Buah</h3>
-                <div class="stars">
-                    <i id="likes1-Sop" class="fas fa-star" >0</i>
-                </div>
-                <span>Rp10.000</span>
-                <a href="#sop-buah" class="btn">pesan sekarang</a>
-            </div>
-
-
-        </div>
+        <div class="box-container"></div>
     </section>
     <!-- dishes section end -->
 
@@ -190,14 +153,15 @@
         <h1 class="heading">rasakan kesegarannya</h1>
 
         <div class="box-container">
-            <div class="box" id="jus-alpukat">
+
+            <div class="box" id="jus-alpukat" data-dish-name="Jus Alpukat">
                 <div class="image">
                     <img src="img/jus alpukat.png" alt="">
-                <button onclick="myFunction1()" class="fas fa-heart"></button>
+                    <button onclick="addStar('Jus Alpukat')" class="fas fa-heart"></button>
                 </div>
                 <div class="content">
                     <div class="stars">
-                    <i id="likes2-JusAlpukat" class="fas fa-star" >0</i>
+                        <i class="fas fa-star">0</i>
                     </div>
                     <h3>Jus Alpukat</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
@@ -206,7 +170,13 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input type="number" min="0" placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk1" type="number" min="0" placeholder="masukkan jumlah pesanan">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input2">
+                                    <span>pilih kategori :</span>
+                                    <div id="radioButtonContainer1"></div>
+                                </div>
                             </div>
                             <div class="inputBox">
                                 <div class="input">
@@ -220,14 +190,14 @@
                 </div>
             </div>
 
-            <div class="box">
-                <div class="image" id="jus-apel">
+            <div class="box" id="jus-apel" data-dish-name="Jus Apel">
+                <div class="image">
                     <img src="img/jus apel.png" alt="">
-                <button onclick="myFunction2()" class="fas fa-heart"></button>
+                    <button onclick="addStar('Jus Apel')" class="fas fa-heart"></button>
                 </div>
                 <div class="content">
                     <div class="stars">
-                    <i id="likes2-JusApel" class="fas fa-star" >0</i>
+                        <i class="fas fa-star">0</i>
                     </div>
                     <h3>jus apel</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
@@ -236,7 +206,13 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input type="number" min="0" placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk2" type="number" min="0" placeholder="masukkan jumlah pesanan">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input2">
+                                    <span>pilih kategori :</span>
+                                    <div id="radioButtonContainer2"></div>
+                                </div>
                             </div>
                             <div class="inputBox">
                                 <div class="input">
@@ -250,14 +226,14 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" id="jus-jambu" data-dish-name="Jus Jambu">
                 <div class="image">
                     <img src="img/jus jambu.png" alt="">
-                <button onclick="myFunction3()" class="fas fa-heart"></button>
+                    <button onclick="addStar('Jus Jambu')" class="fas fa-heart"></button>
                 </div>
                 <div class="content">
                     <div class="stars">
-                    <i id="likes1-JusJambu" class="fas fa-star" >0</i>
+                        <i class="fas fa-star">0</i>
                     </div>
                     <h3>jus jambu</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
@@ -266,7 +242,13 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input type="number" min="0" placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk3" type="number" min="0" placeholder="masukkan jumlah pesanan">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input2">
+                                    <span>pilih kategori :</span>
+                                    <div id="radioButtonContainer3"></div>
+                                </div>
                             </div>
                             <div class="inputBox">
                                 <div class="input">
@@ -280,14 +262,14 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" id="jus-jeruk" data-dish-name="Jus Alpukat">
                 <div class="image">
                     <img src="img/jus jeruk.png" alt="">
-                <button onclick="myFunction4()" class="fas fa-heart"></button>
+                    <button onclick="addStar('Jus Jeruk')" class="fas fa-heart"></button>
                 </div>
                 <div class="content">
                     <div class="stars">
-                    <i id="likes1-JusJeruk" class="fas fa-star" >0</i>
+                        <i id="likes1-JusJeruk" class="fas fa-star">0</i>
                     </div>
                     <h3>jus jeruk</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
@@ -296,7 +278,13 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input type="number" min="0" placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk4" type="number" min="0" placeholder="masukkan jumlah pesanan">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input2">
+                                    <span>pilih kategori :</span>
+                                    <div id="radioButtonContainer4"></div>
+                                </div>
                             </div>
                             <div class="inputBox">
                                 <div class="input">
@@ -310,14 +298,14 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" id="jus-nanas" data-dish-name="Jus Nanas">
                 <div class="image">
                     <img src="img/jus nanas.png" alt="">
-                <button onclick="myFunction5()" class="fas fa-heart"></button>
+                    <button onclick="addStar('Jus Nanas')" class="fas fa-heart"></button>
                 </div>
                 <div class="content">
                     <div class="stars">
-                    <i id="likes1-JusNanas" class="fas fa-star" >0</i>
+                        <i id="likes1-JusNanas" class="fas fa-star">0</i>
                     </div>
                     <h3>jus nanas</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
@@ -326,7 +314,13 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input type="number" min="0" placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk5" type="number" min="0" placeholder="masukkan jumlah pesanan">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input2">
+                                    <span>pilih kategori :</span>
+                                    <div id="radioButtonContainer5"></div>
+                                </div>
                             </div>
                             <div class="inputBox">
                                 <div class="input">
@@ -340,14 +334,14 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" id="jus-semangka" data-dish-name="Jus Semangka">
                 <div class="image">
                     <img src="img/jus semangka.png" alt="">
-                <button onclick="myFunction6()" class="fas fa-heart"></button>
+                    <button onclick="addStar('Jus Semangka')" class="fas fa-heart"></button>
                 </div>
                 <div class="content">
                     <div class="stars">
-                    <i id="likes1-JusSemangka" class="fas fa-star" >0</i>
+                        <i id="likes1-JusSemangka" class="fas fa-star">0</i>
                     </div>
                     <h3>jus semangka</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
@@ -356,7 +350,13 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input type="number" min="0" placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk6" type="number" min="0" placeholder="masukkan jumlah pesanan">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input2">
+                                    <span>pilih kategori :</span>
+                                    <div id="radioButtonContainer6"></div>
+                                </div>
                             </div>
                             <div class="inputBox">
                                 <div class="input">
@@ -370,14 +370,14 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" id="jus-stroberi" data-dish-name="Jus Stroberi">
                 <div class="image">
                     <img src="img/jus stroberi.png" alt="">
-                <button onclick="myFunction7()" class="fas fa-heart"></button>
+                    <button onclick="addStar('Jus Stroberi')" class="fas fa-heart"></button>
                 </div>
                 <div class="content">
                     <div class="stars">
-                    <i id="likes1-JusStroberi" class="fas fa-star" >0</i>
+                        <i id="likes1-JusStroberi" class="fas fa-star">0</i>
                     </div>
                     <h3>jus stroberi</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
@@ -386,7 +386,13 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input type="number" min="0" placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk7" type="number" min="0" placeholder="masukkan jumlah pesanan">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input2">
+                                    <span>pilih kategori :</span>
+                                    <div id="radioButtonContainer7"></div>
+                                </div>
                             </div>
                             <div class="inputBox">
                                 <div class="input">
@@ -400,14 +406,14 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" id="rujak-buah" data-dish-name="Rujak Buah">
                 <div class="image">
                     <img src="img/rujak buah.png" alt="">
-                <button onclick="myFunction8()" class="fas fa-heart"></button>
+                    <button onclick="addStar('Rujak Buah')" class="fas fa-heart"></button>
                 </div>
                 <div class="content">
                     <div class="stars">
-                    <i id="likes1-Rujak" class="fas fa-star" >0</i>
+                        <i id="likes1-Rujak" class="fas fa-star">0</i>
                     </div>
                     <h3>rujak buah</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
@@ -416,7 +422,13 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input type="number" min="0" placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk8" type="number" min="0" placeholder="masukkan jumlah pesanan">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input2">
+                                    <span>pilih kategori :</span>
+                                    <div id="radioButtonContainer8"></div>
+                                </div>
                             </div>
                             <div class="inputBox">
                                 <div class="input">
@@ -430,14 +442,14 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box" id="salad-buah" data-dish-name="Salad Buah">
                 <div class="image">
                     <img src="img/salad buah.png" alt="">
-                <button onclick="myFunction9()" class="fas fa-heart"></button>
+                    <button onclick="addStar('Salad Buah')" class="fas fa-heart"></button>
                 </div>
                 <div class="content">
                     <div class="stars">
-                    <i id="likes1-Salad" class="fas fa-star" >0</i>
+                        <i id="likes1-Salad" class="fas fa-star">0</i>
                     </div>
                     <h3>salad buah</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
@@ -446,7 +458,13 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input type="number" min="0" placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk9" type="number" min="0" placeholder="masukkan jumlah pesanan">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input2">
+                                    <span>pilih kategori :</span>
+                                    <div id="radioButtonContainer9"></div>
+                                </div>
                             </div>
                             <div class="inputBox">
                                 <div class="input">
@@ -460,14 +478,14 @@
                 </div>
             </div>
 
-            <div class="box" id="sop-buah">
+            <div class="box" id="sop-buah" data-dish-name="Sop Buah">
                 <div class="image">
                     <img src="img/sop buah.png" alt="">
-                <button onclick="myFunction10()" class="fas fa-heart"></button>
+                    <button onclick="addStar('Sop Buah')" class="fas fa-heart"></button>
                 </div>
                 <div class="content">
                     <div class="stars">
-                    <i id="likes2-Sop" class="fas fa-star" >0</i>
+                        <i id="likes2-Sop" class="fas fa-star">0</i>
                     </div>
                     <h3>sop buah</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
@@ -476,7 +494,13 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input type="number" min="0" placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk10" type="number" min="0" placeholder="masukkan jumlah pesanan">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input2">
+                                    <span>pilih kategori :</span>
+                                    <div id="radioButtonContainer10"></div>
+                                </div>
                             </div>
                             <div class="inputBox">
                                 <div class="input">
@@ -501,11 +525,11 @@
                     <textarea name="" placeholder="masukkan alamat" id="" cols="30" rows="10" required></textarea>
                 </div>
             </div>
-
             <div class="inputBox">
                 <div class="input">
                     <span>no. whatsapp</span>
-                    <input type="text" pattern="[0-9]+" placeholder="masukkan nomor" minlength="10" maxlength="13" required>
+                    <input type="text" pattern="[0-9]+" placeholder="masukkan nomor" minlength="10" maxlength="13"
+                        required>
                 </div>
                 <div class="input">
                     <span>tanggal dan waktu pemesanan</span>
@@ -532,13 +556,6 @@
                         <img src="img/13.png" alt="">
                         <div class="user-info">
                             <h3>dominic tottero</h3>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
                         </div>
                     </div>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, nemo dolor. Libero rerum
@@ -552,13 +569,6 @@
                         <img src="img/14.png" alt="">
                         <div class="user-info">
                             <h3>aulia</h3>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
                         </div>
                     </div>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, nemo dolor. Libero rerum
@@ -572,12 +582,6 @@
                         <img src="img/15.png" alt="">
                         <div class="user-info">
                             <h3>peter parkur</h3>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> </div>
                         </div>
                     </div>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, nemo dolor. Libero rerum
@@ -591,12 +595,6 @@
                         <img src="img/16.png" alt="">
                         <div class="user-info">
                             <h3>tissu</h3>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> </div>
                         </div>
                     </div>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, nemo dolor. Libero rerum
@@ -622,38 +620,39 @@
             </div>
 
             <div class="box">
-                <h3>quick link</h3>
-                <a href="#home">home</a>
+                <h3>link cepat</h3>
+                <a href="#home">beranda</a>
                 <a href="#dishes">informasi</a>
                 <a href="#about">tentang</a>
-                <a href="#order">order</a>
+                <a href="#order">pesan</a>
                 <a href="#review">ulasan</a>
             </div>
 
             <div class="box">
-                <h3>contact person</h3>
+                <h3>hubungi kaami</h3>
                 <a href="http://www.wasap.my/6281909561200" target="_blank">+62 819 0956 1200</a>
-                <a href="https://www.instagram.com/direct/t/340282366841710300949128165706432124526"
-                    target="_blank" style="text-transform: none;">@m_saifuddin711</a>
-                <a href="mailto:masoodinc1@gmail.com" target="_blank" style="text-transform: none;">masoodinc1@gmail.com</a>
+                <a href="https://www.instagram.com/direct/t/340282366841710300949128165706432124526" target="_blank"
+                    style="text-transform: none;">@m_saifuddin711</a>
+                <a href="mailto:masoodinc1@gmail.com" target="_blank"
+                    style="text-transform: none;">masoodinc1@gmail.com</a>
             </div>
 
             <div class="box">
-                <h3>follow us</h3>
+                <h3>ikuti kami</h3>
                 <a href="https://www.instagram.com/m_saifuddin711" target="_blank">instagram</a>
                 <a href="https://www.facebook.com/pedangagama.islam.7/" target="_blank">facebook</a>
                 <a href="https://github.com/oodinc" target="_blank">gitHub</a>
             </div>
         </div>
 
-        <div class="credit">copyright @2022 by <span>Udin Technology</span></div>
+        <div class="credit"><i class="far fa-copyright"></i> 2023 Udin Technology</div>
     </section>
     <!-- footer section end-->
 
     <!-- loader start -->
-    <div class="loader-container">
+    <!-- <div class="loader-container" id="loader">
         <img src="img/17.gif" alt="">
-    </div>
+    </div> -->
     <!-- loader start -->
 
 
