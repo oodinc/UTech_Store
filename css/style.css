@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
 :root {
-    --blue: rgb(51,181,172);
+    --blue: rgb(78, 205, 196);
     --black: rgb(15,52,50);
     --light-color: #666;
     --box-shadow: rgb(0 0 0 / 7%) 0px 4px 6px -1px;
@@ -747,13 +747,15 @@ header .icons #menu-bars {
 
     header .navbar.active {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        padding-bottom: 100%;
     }
 
     header .navbar a {
         display: block;
-        padding: 1.5rem;
         margin: 1rem;
+        height: 4.5rem;
         font-size: 2rem;
+        text-align: center;
         background: #eee;
     }
 
