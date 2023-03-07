@@ -75,7 +75,7 @@ header {
     padding: 1rem 7%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justif: space-between;
     z-index: 1000;
     box-shadow: var(--box-shadow);
 }
@@ -94,11 +94,17 @@ header .logo i {
     color: varvar(--blue);
 }
 
+
 .order .box-container {
-    padding-top: 6rem;
+    padding-top: 5.7rem;
     display: grid;
+    justify-content: center;
+    align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
+    gap: 1.5rem;    
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--light-color);
 }
 
 .order .box-container .box {
@@ -109,7 +115,7 @@ header .logo i {
     box-shadow: var(--box-shadow);
     position: relative;
     overflow: hidden;
-    text-align: center;
+    margin-bottom: 25rem;
 }
 
 .order .box-container .box .image img {
@@ -117,75 +123,43 @@ header .logo i {
     margin: 1rem 0;
 }
 
-.order .box-container .box .content {
-    padding: 2rem;
-    padding-top: 0;
+.order .box-container .box table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+.order .box-container .box th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-.order .box-container .box .content h3 {
+.order .box-container .box th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+.order .box-container .box tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+.order .box-container .box h3 {
     color: var(--black);
+    margin-top: 0;
     font-size: 2.5rem;
+    font-weight: bold;
+color: #333;
 }
 
-.order .box-container .box .content p {
+.order .box-container .box p {
     color: var(--light-color);
     font-size: 1.6rem;
     padding: .5rem 0;
     line-height: 1.5;
+    text-transform: none;
 }
 
-.order .box-container .box .content .price {
-    color: varvar(--blue);
-    margin-left: 1rem;
-    font-size: 2.5rem;
-}
-
-.order .box-container2 {
-    padding-top: 1rem;
-    padding-bottom: 6.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
-}
-
-.order .box-container2 .box {
-    padding: 1.5rem;
-    background: #fff;
-    border-radius: .5rem;
-    border: .1rem solid rgba(0, 0, 0, .2);
-    box-shadow: var(--box-shadow);
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-}
-
-.order .box-container2 .box .image img {
-    height: 17rem;
-    margin: 1rem 0;
-}
-
-.order .box-container2 .box .content {
-    padding: 2rem;
-    padding-top: 0;
-}
-
-.order .box-container2 .box .content h3 {
-    color: var(--black);
-    font-size: 2.5rem;
-}
-
-.order .box-container2 .box .content p {
-    color: var(--light-color);
-    font-size: 1.6rem;
-    padding: .5rem 0;
-    line-height: 1.5;
-}
-
-.order .box-container2 .box .content .price {
-    color: varvar(--blue);
-    margin-left: 1rem;
-    font-size: 2.5rem;
-}
 
 .footer .box-container {
     display: grid;
@@ -223,52 +197,4 @@ header .logo i {
 
 .footer .credit span {
     color: var(--blue);
-}
-
-.loader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 10000;
-    background: #fcfcff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.loader-container img {
-    width: 10rem;
-}
-
-.loader-container.fade-out {
-    top: 110%;
-    opacity: 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width:992px) {
-    header {
-        padding: 1rem 2rem;
-    }
 }

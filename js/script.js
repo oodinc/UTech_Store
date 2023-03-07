@@ -89,7 +89,28 @@ var swiper = new Swiper(".home-slider", {
   loop: true,
 });
 
+function updateTable() {
+  // buat object XMLHttpRequest
+  let xhr = new XMLHttpRequest();
 
+  // buat request untuk mengirim data ke server
+  xhr.open("POST", "proses.php");
+
+  // atur header untuk memberitahu server bahwa data yang dikirim adalah dalam bentuk form data
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  // atur callback function untuk menangani response dari server
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      // jika response sukses, update tampilan table dengan data yang dikirimkan oleh server
+      document.getElementById("tableContainer").innerHTML = xhr.responseText;
+    }
+  };
+
+  // kirim data form ke server
+  let formData = new FormData(document.getElementById("myForm"));
+  xhr.send(formData);
+}
 // order radio button
 const jumlahProduk1 = document.getElementById("jumlahProduk1");
 const jumlahProduk2 = document.getElementById("jumlahProduk2");
@@ -102,7 +123,6 @@ const jumlahProduk8 = document.getElementById("jumlahProduk8");
 const jumlahProduk9 = document.getElementById("jumlahProduk9");
 const jumlahProduk10 = document.getElementById("jumlahProduk10");
 
-
 const radioButtonContainer1 = document.getElementById("radioButtonContainer1");
 const radioButtonContainer2 = document.getElementById("radioButtonContainer2");
 const radioButtonContainer3 = document.getElementById("radioButtonContainer3");
@@ -114,126 +134,212 @@ const radioButtonContainer8 = document.getElementById("radioButtonContainer8");
 const radioButtonContainer9 = document.getElementById("radioButtonContainer9");
 const radioButtonContainer10 = document.getElementById("radioButtonContainer10");
 
-jumlahProduk1.addEventListener("input", function() {
+jumlahProduk1.addEventListener("input", function () {
   radioButtonContainer1.innerHTML = "";
   for (let i = 1; i <= jumlahProduk1.value; i++) {
     radioButtonContainer1.innerHTML += `
     Minuman ${i}: 
-      <input type="radio" name="minuman${i}" value="biasa"> Biasa 
-      <input type="radio" name="minuman${i}" value="es"> Es
+      <input type="radio" name="minuman1_${i}" value="biasa" required> Biasa 
+      <input type="radio" name="minuman1_${i}" value="es" required> Es
       <br>
     `;
   }
 });
 
-jumlahProduk2.addEventListener("input", function() {
+jumlahProduk2.addEventListener("input", function () {
   radioButtonContainer2.innerHTML = "";
   for (let i = 1; i <= jumlahProduk2.value; i++) {
     radioButtonContainer2.innerHTML += `
     Minuman ${i}: 
-      <input type="radio" name="minuman${i}" value="biasa"> Biasa 
-      <input type="radio" name="minuman${i}" value="es"> Es
+      <input type="radio" name="minuman2_${i}" value="biasa" required> Biasa 
+      <input type="radio" name="minuman2_${i}" value="es" required> Es
       <br>
     `;
   }
 });
 
-jumlahProduk3.addEventListener("input", function() {
+jumlahProduk3.addEventListener("input", function () {
   radioButtonContainer3.innerHTML = "";
   for (let i = 1; i <= jumlahProduk3.value; i++) {
     radioButtonContainer3.innerHTML += `
     Minuman ${i}: 
-      <input type="radio" name="minuman${i}" value="biasa"> Biasa 
-      <input type="radio" name="minuman${i}" value="es"> Es
+      <input type="radio" name="minuman3_${i}" value="biasa" required> Biasa 
+      <input type="radio" name="minuman3_${i}" value="es" required> Es
       <br>
     `;
   }
 });
 
-jumlahProduk4.addEventListener("input", function() {
+jumlahProduk4.addEventListener("input", function () {
   radioButtonContainer4.innerHTML = "";
   for (let i = 1; i <= jumlahProduk4.value; i++) {
     radioButtonContainer4.innerHTML += `
     Minuman ${i}: 
-      <input type="radio" name="minuman${i}" value="biasa"> Biasa 
-      <input type="radio" name="minuman${i}" value="es"> Es
+      <input type="radio" name="minuman4_${i}" value="biasa" required> Biasa 
+      <input type="radio" name="minuman4_${i}" value="es" required> Es
       <br>
     `;
   }
 });
 
-jumlahProduk5.addEventListener("input", function() {
+jumlahProduk5.addEventListener("input", function () {
   radioButtonContainer5.innerHTML = "";
   for (let i = 1; i <= jumlahProduk5.value; i++) {
     radioButtonContainer5.innerHTML += `
     Minuman ${i}: 
-      <input type="radio" name="minuman${i}" value="biasa"> Biasa 
-      <input type="radio" name="minuman${i}" value="es"> Es
+      <input type="radio" name="minuman5_${i}" value="biasa" required> Biasa 
+      <input type="radio" name="minuman5_${i}" value="es" required> Es
       <br>
     `;
   }
 });
 
-jumlahProduk6.addEventListener("input", function() {
+jumlahProduk6.addEventListener("input", function () {
   radioButtonContainer6.innerHTML = "";
   for (let i = 1; i <= jumlahProduk6.value; i++) {
     radioButtonContainer6.innerHTML += `
     Minuman ${i}: 
-      <input type="radio" name="minuman${i}" value="biasa"> Biasa 
-      <input type="radio" name="minuman${i}" value="es"> Es
+      <input type="radio" name="minuman6_${i}" value="biasa" required> Biasa 
+      <input type="radio" name="minuman6_${i}" value="es" required> Es
       <br>
     `;
   }
 });
 
-jumlahProduk7.addEventListener("input", function() {
+jumlahProduk7.addEventListener("input", function () {
   radioButtonContainer7.innerHTML = "";
   for (let i = 1; i <= jumlahProduk7.value; i++) {
     radioButtonContainer7.innerHTML += `
     Minuman ${i}: 
-      <input type="radio" name="minuman${i}" value="biasa"> Biasa 
-      <input type="radio" name="minuman${i}" value="es"> Es
+      <input type="radio" name="minuman7_${i}" value="biasa" required> Biasa 
+      <input type="radio" name="minuman7_${i}" value="es" required> Es
       <br>
     `;
   }
 });
 
-jumlahProduk8.addEventListener("input", function() {
+jumlahProduk8.addEventListener("input", function () {
   radioButtonContainer8.innerHTML = "";
   for (let i = 1; i <= jumlahProduk8.value; i++) {
     radioButtonContainer8.innerHTML += `
     Minuman ${i}: 
-      <input type="radio" name="minuman${i}" value="biasa"> Biasa 
-      <input type="radio" name="minuman${i}" value="es"> Es
+      <input type="radio" name="minuman8_${i}" value="biasa" required> Biasa 
+      <input type="radio" name="minuman8_${i}" value="es" required> Es
       <br>
     `;
   }
 });
 
-jumlahProduk9.addEventListener("input", function() {
+jumlahProduk9.addEventListener("input", function () {
   radioButtonContainer9.innerHTML = "";
   for (let i = 1; i <= jumlahProduk9.value; i++) {
     radioButtonContainer9.innerHTML += `
     Minuman ${i}: 
-      <input type="radio" name="minuman${i}" value="biasa"> Biasa 
-      <input type="radio" name="minuman${i}" value="es"> Es
+      <input type="radio" name="minuman9_${i}" value="biasa" required> Biasa 
+      <input type="radio" name="minuman9_${i}" value="es" required> Es
       <br>
     `;
   }
 });
 
-jumlahProduk10.addEventListener("input", function() {
+jumlahProduk10.addEventListener("input", function () {
   radioButtonContainer10.innerHTML = "";
   for (let i = 1; i <= jumlahProduk10.value; i++) {
     radioButtonContainer10.innerHTML += `
     Minuman ${i}: 
-      <input type="radio" name="minuman${i}" value="biasa"> Biasa 
-      <input type="radio" name="minuman${i}" value="es"> Es
+      <input type="radio" name="minuman10_${i}" value="biasa" required> Biasa 
+      <input type="radio" name="minuman10_${i}" value="es" required> Es
       <br>
     `;
   }
 });
 
+function validateForm() {
+  var jumlahProduk1 = document.getElementById("jumlahProduk1").value;
+  var jumlahProduk2 = document.getElementById("jumlahProduk2").value;
+  var jumlahProduk3 = document.getElementById("jumlahProduk3").value;
+  var jumlahProduk4 = document.getElementById("jumlahProduk4").value;
+  var jumlahProduk5 = document.getElementById("jumlahProduk5").value;
+  var jumlahProduk6 = document.getElementById("jumlahProduk6").value;
+  var jumlahProduk7 = document.getElementById("jumlahProduk7").value;
+  var jumlahProduk8 = document.getElementById("jumlahProduk8").value;
+  var jumlahProduk9 = document.getElementById("jumlahProduk9").value;
+  var jumlahProduk10 = document.getElementById("jumlahProduk10").value;
+
+  if (jumlahProduk1 === "" && jumlahProduk2 === "" && jumlahProduk3 === "" && jumlahProduk4 === "" && jumlahProduk5 === ""
+  && jumlahProduk6 === "" && jumlahProduk7 === "" && jumlahProduk8 === "" && jumlahProduk9 === "" && jumlahProduk10 === "") {
+    alert("Anda belum memilih produk.");
+    return false;
+  }
+
+  if (jumlahProduk1 !== "" && (isNaN(jumlahProduk1) || jumlahProduk1 < 1)) {
+    alert("Jumlah produk 1 tidak valid.");
+    return false;
+  }
+
+  if (jumlahProduk2 !== "" && (isNaN(jumlahProduk2) || jumlahProduk2 < 1)) {
+    alert("Jumlah produk 2 tidak valid.");
+    return false;
+  }
+
+  if (jumlahProduk3 !== "" && (isNaN(jumlahProduk3) || jumlahProduk3 < 1)) {
+    alert("Jumlah produk 3 tidak valid.");
+    return false;
+  }
+
+  if (jumlahProduk4 !== "" && (isNaN(jumlahProduk4) || jumlahProduk4 < 1)) {
+    alert("Jumlah produk 4 tidak valid.");
+    return false;
+  }
+
+  if (jumlahProduk5 !== "" && (isNaN(jumlahProduk5) || jumlahProduk5 < 1)) {
+    alert("Jumlah produk 5 tidak valid.");
+    return false;
+  }
+
+  if (jumlahProduk6 !== "" && (isNaN(jumlahProduk6) || jumlahProduk6 < 1)) {
+    alert("Jumlah produk 6 tidak valid.");
+    return false;
+  }
+
+  if (jumlahProduk7 !== "" && (isNaN(jumlahProduk7) || jumlahProduk7 < 1)) {
+    alert("Jumlah produk 7 tidak valid.");
+    return false;
+  }
+
+  if (jumlahProduk8 !== "" && (isNaN(jumlahProduk8) || jumlahProduk8 < 1)) {
+    alert("Jumlah produk 8 tidak valid.");
+    return false;
+  }
+
+  if (jumlahProduk9 !== "" && (isNaN(jumlahProduk9) || jumlahProduk9 < 1)) {
+    alert("Jumlah produk 9 tidak valid.");
+    return false;
+  }
+
+  if (jumlahProduk10 !== "" && (isNaN(jumlahProduk10) || jumlahProduk10 < 1)) {
+    alert("Jumlah produk 10 tidak valid.");
+    return false;
+  }
+}
+
+// validasi
+const form = document.querySelector("form");
+form.addEventListener("submit", function (e) {
+  const radios = document.querySelectorAll('input[type="radio"]');
+  let checked = false;
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      checked = true;
+      break;
+    }
+  }
+  // check if the form being submitted is the search form
+  if (e.target.id !== 'search-form' && !checked) {
+    alert("Please select one of these options.");
+    e.preventDefault();
+  }
+});
 
 // review slider
 var swiper = new Swiper(".review-slider", {
@@ -262,14 +368,16 @@ var swiper = new Swiper(".review-slider", {
 });
 
 // loader
-function loader() {
-  document.querySelector(".loader-container").classList.add("fade-out");
-}
+// Mendapatkan elemen loader dan konten
+const loader = document.querySelector('.loader');
+const content = document.querySelector('.content');
 
-function fadeOut() {
-  setInterval(loader, 3000);
-}
-window.onload = fadeOut;
+// Menunggu konten selesai dimuat
+window.addEventListener('load', function() {
+  // Menghilangkan elemen loader setelah konten selesai dimuat
+  loader.style.display = 'none';
+  content.style.display = 'block';
+});
 
 // UI bintang & sort
 const dishes = [
