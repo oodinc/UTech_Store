@@ -16,7 +16,7 @@
 
     <!-- font link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
     <!-- css link -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -26,19 +26,18 @@
 
     <!-- header section start -->
     <header>
-        <a href="#home" class="logo"><img src="img/logo.png">UTech Store</a>
-
+        <a href="index.php" class="logo"><img src="img/logo.png">UTech Store</a>
+        
         <nav class="navbar">
-            <a class="active" href="#home">beranda</a>
-            <a href="#dishes">informasi</a>
-            <a href="#about">tentang</a>
-            <a href="#order">pesan</a>
-            <a href="#review">ulasan</a>
+            <a><i class="icons fa fa-user"></i></a>
+            <a class="active nav" href="#home">beranda</a>
+            <a class="nav" href="#dishes">informasi</a>
+            <a class="nav" href="#about">tentang</a>
+            <a class="nav" href="#order">pesan</a>
+            <a class="nav" href="#review">ulasan</a>
         </nav>
 
         <div class="icons">
-            <i class="fas fa-search" id="search-icon"></i>
-            <i class="fa fa-user"></i>
             <i class="fas fa-bars" id="menu-bars"></i>
         </div>
 
@@ -48,9 +47,12 @@
     <!-- search form -->
 
     <form action="" id="search-form">
-        <input type="search" placeholder="Type to search.." name="" id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-        <i class="fas fa-times" id="close"></i>
+        <div class="wrapper">
+            <div class="search">
+                <span class="fas fa-search"></span>
+                <input placeholder="Search" type="text" class="search-input" id="search-box">
+            </div>
+        </div>
     </form>
 
     <!-- home section start -->
@@ -147,7 +149,7 @@
 
     <!-- order section start  -->
     <section class="order" id="order">
-        <form method="POST" action="halaman_Checkout.php" id="myForm" onsubmit="return validateForm()">
+        <form method="POST" id="myForm" action="halaman_checkout.php" onsubmit="return validateForm()">
             <h3 class="sub-heading">pesan sekarang!</h3>
             <h1 class="heading">rasakan kesegarannya</h1>
 
@@ -164,13 +166,12 @@
                         </div>
                         <h3>Jus Alpukat</h3>
                         <p>Jus krimi dengan rasa lembut dan creamy, kaya akan nutrisi dan tinggi kandungan serat alami. Cocok untuk pencinta rasa manis dan sehat.</p>
-                        <span class="price">Rp7.000</span>
+                        <span class="price">Rp6.000</span>
 
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input id="jumlahProduk1" pattern="[0-9]+" type="number" name="jumlahProduk1" min="0"
-                                    placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk1" pattern="[0-9]+" type="number" name="jumlahProduk1" min="0" placeholder="masukkan jumlah pesanan">
                             </div>
                             <div class="inputBox">
                                 <div class="input2">
@@ -181,8 +182,7 @@
                             <div class="inputBox">
                                 <div class="input">
                                     <span>catatan :</span>
-                                    <textarea name="catatan1" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id=""
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="catatan1" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -200,12 +200,11 @@
                         </div>
                         <h3>jus apel</h3>
                         <p>Jus segar dengan cita rasa manis asam, kaya akan vitamin C dan antioksidan. Cocok untuk penggemar rasa asam dan menyehatkan tubuh.</p>
-                        <span class="price">Rp7.000</span>
+                        <span class="price">Rp6.000</span>
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input id="jumlahProduk2" pattern="[0-9]+" type="number" name="jumlahProduk2" min="0"
-                                    placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk2" pattern="[0-9]+" type="number" name="jumlahProduk2" min="0" placeholder="masukkan jumlah pesanan">
                             </div>
                             <div class="inputBox">
                                 <div class="input2">
@@ -216,8 +215,7 @@
                             <div class="inputBox">
                                 <div class="input">
                                     <span>catatan :</span>
-                                    <textarea name="catatan2" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id=""
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="catatan2" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -235,13 +233,12 @@
                         </div>
                         <h3>Jus Jambu</h3>
                         <p>Jus manis dengan aroma khas buah jambu, kaya akan serat alami dan vitamin C. Cocok untuk pencinta rasa manis dan sehat.</p>
-                        <span class="price">Rp7.000</span>
+                        <span class="price">Rp6.000</span>
 
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input id="jumlahProduk3" pattern="[0-9]+" type="number" name="jumlahProduk3" min="0"
-                                    placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk3" pattern="[0-9]+" type="number" name="jumlahProduk3" min="0" placeholder="masukkan jumlah pesanan">
                             </div>
                             <div class="inputBox">
                                 <div class="input2">
@@ -252,8 +249,7 @@
                             <div class="inputBox">
                                 <div class="input">
                                     <span>catatan :</span>
-                                    <textarea name="catatan3" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id=""
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="catatan3" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -271,13 +267,12 @@
                         </div>
                         <h3>Jus Jeruk</h3>
                         <p>Jus segar dengan cita rasa asam manis, kaya akan vitamin C dan antioksidan. Cocok untuk penggemar rasa asam dan menyegarkan tubuh.</p>
-                        <span class="price">Rp7.000</span>
+                        <span class="price">Rp6.000</span>
 
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input id="jumlahProduk4" pattern="[0-9]+" type="number" name="jumlahProduk4" min="0"
-                                    placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk4" pattern="[0-9]+" type="number" name="jumlahProduk4" min="0" placeholder="masukkan jumlah pesanan">
                             </div>
                             <div class="inputBox">
                                 <div class="input2">
@@ -288,8 +283,7 @@
                             <div class="inputBox">
                                 <div class="input">
                                     <span>catatan :</span>
-                                    <textarea name="catatan4" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id=""
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="catatan4" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -307,13 +301,12 @@
                         </div>
                         <h3>Jus Nanas</h3>
                         <p>Jus segar dengan rasa manis dan asam yang seimbang, kaya akan enzim bromelain dan vitamin C. Cocok untuk pencinta rasa manis dan sehat.</p>
-                        <span class="price">Rp7.000</span>
+                        <span class="price">Rp6.000</span>
 
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input id="jumlahProduk5" pattern="[0-9]+" type="number" name="jumlahProduk5" min="0"
-                                    placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk5" pattern="[0-9]+" type="number" name="jumlahProduk5" min="0" placeholder="masukkan jumlah pesanan">
                             </div>
                             <div class="inputBox">
                                 <div class="input2">
@@ -324,8 +317,7 @@
                             <div class="inputBox">
                                 <div class="input">
                                     <span>catatan :</span>
-                                    <textarea name="catatan5" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id=""
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="catatan5" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -343,13 +335,12 @@
                         </div>
                         <h3>Jus Semangka</h3>
                         <p>Jus segar dengan rasa manis dan segar, kaya akan kandungan air dan vitamin C. Cocok untuk penggemar rasa segar dan menyegarkan tubuh.</p>
-                        <span class="price">Rp7.000</span>
+                        <span class="price">Rp6.000</span>
 
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input id="jumlahProduk6" pattern="[0-9]+" type="number" name="jumlahProduk6" min="0"
-                                    placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk6" pattern="[0-9]+" type="number" name="jumlahProduk6" min="0" placeholder="masukkan jumlah pesanan">
                             </div>
                             <div class="inputBox">
                                 <div class="input2">
@@ -360,8 +351,7 @@
                             <div class="inputBox">
                                 <div class="input">
                                     <span>catatan :</span>
-                                    <textarea name="catatan6" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id=""
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="catatan6" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -379,13 +369,12 @@
                         </div>
                         <h3>Jus Stroberi</h3>
                         <p>Jus manis dengan rasa segar dan aroma khas stroberi, kaya akan vitamin C dan antioksidan. Cocok untuk pencinta rasa manis dan sehat.</p>
-                        <span class="price">Rp7.000</span>
+                        <span class="price">Rp6.000</span>
 
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input id="jumlahProduk7" pattern="[0-9]+" type="number" name="jumlahProduk7" min="0"
-                                    placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk7" pattern="[0-9]+" type="number" name="jumlahProduk7" min="0" placeholder="masukkan jumlah pesanan">
                             </div>
                             <div class="inputBox">
                                 <div class="input2">
@@ -396,8 +385,7 @@
                             <div class="inputBox">
                                 <div class="input">
                                     <span>catatan :</span>
-                                    <textarea name="catatan7" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id=""
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="catatan7" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -420,8 +408,7 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input id="jumlahProduk8" pattern="[0-9]+" type="number" name="jumlahProduk8" min="0"
-                                    placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk8" pattern="[0-9]+" type="number" name="jumlahProduk8" min="0" placeholder="masukkan jumlah pesanan">
                             </div>
                             <div class="inputBox">
                                 <div class="input2">
@@ -432,8 +419,7 @@
                             <div class="inputBox">
                                 <div class="input">
                                     <span>catatan :</span>
-                                    <textarea name="catatan8" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id=""
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="catatan8" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -456,8 +442,7 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input id="jumlahProduk9" pattern="[0-9]+" type="number" name="jumlahProduk9" min="0"
-                                    placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk9" pattern="[0-9]+" type="number" name="jumlahProduk9" min="0" placeholder="masukkan jumlah pesanan">
                             </div>
                             <div class="inputBox">
                                 <div class="input2">
@@ -468,8 +453,7 @@
                             <div class="inputBox">
                                 <div class="input">
                                     <span>catatan :</span>
-                                    <textarea name="catatan9" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id=""
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="catatan9" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -492,8 +476,7 @@
                         <div class="inputBox">
                             <div class="input">
                                 <span>jumlah :</span>
-                                <input id="jumlahProduk10" pattern="[0-9]+" type="number" name="jumlahProduk10" min="0"
-                                    placeholder="masukkan jumlah pesanan">
+                                <input id="jumlahProduk10" pattern="[0-9]+" type="number" name="jumlahProduk10" min="0" placeholder="masukkan jumlah pesanan">
                             </div>
                             <div class="inputBox">
                                 <div class="input2">
@@ -504,8 +487,7 @@
                             <div class="inputBox">
                                 <div class="input">
                                     <span>catatan :</span>
-                                    <textarea name="catatan10" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id=""
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="catatan10" placeholder="masukkan catatan" pattern="[A-Z a-z]+" id="" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -516,19 +498,17 @@
                 <div class="inputBox">
                     <div class="input">
                         <span>nama</span>
-                        <input type="text" name="nama" pattern="[A-Z a-z]+" placeholder="masukkan nama" required>
+                        <input type="text" name="namaPemesan" pattern="[A-Z a-z]+" placeholder="masukkan nama" required>
                     </div>
                     <div class="input">
                         <span>alamat</span>
-                        <textarea name="alamat" placeholder="masukkan alamat" id="" cols="30" rows="10"
-                            required></textarea>
+                        <textarea name="alamat" placeholder="masukkan alamat" id="" cols="30" rows="10" required></textarea>
                     </div>
                 </div>
                 <div class="inputBox">
                     <div class="input">
                         <span>no. whatsapp</span>
-                        <input type="text" name="nomor" pattern="[0-9]+" placeholder="masukkan nomor" minlength="10"
-                            maxlength="13" required>
+                        <input type="text" name="nomor" pattern="[0-9]+" placeholder="masukkan nomor" minlength="10" maxlength="13" required>
                     </div>
                     <div class="input">
                         <span>tanggal dan waktu pemesanan</span>
@@ -537,7 +517,7 @@
 
                 </div>
             </div>
-            <input type="submit" formaction="/halaman_Checkout.php" value="checkout" class="btn">
+            <input type="submit" value="checkout" class="btn">
         </form>
     </section>
     <!-- order section start  -->
@@ -622,18 +602,16 @@
 
             <div class="box">
                 <h3>hubungi kami</h3>
-                <a href="http://www.wasap.my/6281909561200" target="_blank">+62 819 0956 1200</a>
-                <a href="https://www.instagram.com/direct/t/340282366841710300949128165706432124526" target="_blank"
-                    style="text-transform: none;">@m_saifuddin711</a>
-                <a href="mailto:masoodinc1@gmail.com" target="_blank"
-                    style="text-transform: none;">masoodinc1@gmail.com</a>
+                <a href="http://www.wasap.my/6281909561200" target="_blank" style="text-transform: none;">wa.me/+6281909561200</a>
+                <a href="https://www.instagram.com/direct/t/340282366841710300949128165706432124526" target="_blank" style="text-transform: none;">@m_saifuddin711</a>
+                <a href="mailto:masoodinc1@gmail.com" target="_blank" style="text-transform: none;">masoodinc1@gmail.com</a>
             </div>
 
             <div class="box">
                 <h3>ikuti kami</h3>
                 <a href="https://www.instagram.com/m_saifuddin711" target="_blank">instagram</a>
                 <a href="https://www.facebook.com/pedangagama.islam.7/" target="_blank">facebook</a>
-                <a href="https://github.com/oodinc" target="_blank">gitHub</a>
+                <a href="https://github.com/oodinc" target="_blank">GitHub</a>
             </div>
         </div>
 
@@ -646,6 +624,7 @@
         <div class="spinner"></div>
     </div>
     <!-- loader end -->
+
 
 
 

@@ -2,7 +2,7 @@
 
 :root {
     --blue: rgb(78, 205, 196);
-    --black: rgb(15,52,50);
+    --black: rgb(15, 52, 50);
     --light-color: #666;
     --box-shadow: rgb(0 0 0 / 7%) 0px 4px 6px -1px;
 }
@@ -19,6 +19,20 @@
     transition: all .2s linear;
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+/* Untuk browser Firefox */
+input[type="search"]::-moz-search-cancel {
+    display: none;
+}
+
+/* Untuk browser Opera dan Edge */
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -27,7 +41,7 @@ html {
 }
 
 section {
-    padding: 5.5rem 9%;
+    padding: 5.5rem 4.5%;
 }
 
 section:nth-child(even) {
@@ -43,15 +57,15 @@ section:nth-child(even) {
 .heading {
     text-align: center;
     color: var(--black);
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding-bottom: 2rem;
     text-transform: uppercase;
 }
 
 .btn {
     margin-top: 1rem;
-    display: inline-block;
-    font-style: 1.7rem;
+    display: block;
+    font-size: 1.7rem;
     color: #fff;
     background: var(--black);
     border-radius: .5rem;
@@ -95,7 +109,7 @@ header {
     left: 0;
     right: 0;
     background: #fff;
-    padding: 1rem 7%;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -103,15 +117,20 @@ header {
     box-shadow: rgb(0 0 0 / 7%) 0px 4px 6px -1px;
 }
 
-
 header img {
-    height: 3rem;
+    height: 2.7rem;
 }
 
 header .logo {
     color: var(--blue);
     font-size: 2.5rem;
+    padding: 0 4.5%;
     font-weight: bolder;
+}
+
+header .navbar {
+    align-items: center;
+    margin-right: 1rem;
 }
 
 header .navbar a {
@@ -135,29 +154,33 @@ header .navbar a::before {
     transition: all 0.2s ease-in-out;
 }
 
-header .navbar a.active,
-header .navbar a:hover::before {
+header .navbar a.active.nav,
+header .navbar a.nav:hover::before {
     color: var(--blue);
     visibility: visible;
     transform: scaleX(1);
 }
 
 header .icons i,
-header .icons a {
+header i.icons {
+    position: fixed;
+    top: .7rem;
+    right: 1rem;
     cursor: pointer;
-    margin-left: .5rem;
     height: 4.5rem;
     line-height: 4.5rem;
+    margin-left: .5rem;
     width: 4.5rem;
+    align-items: center;
     text-align: center;
     font-size: 1.7rem;
-    color: var(--black);
+    color: var(--light-color);
     border-radius: 50%;
     background: #eee;
 }
 
 header .icons i:hover,
-header .icons a:hover {
+header i.icons:hover {
     color: #fff;
     background: var(--blue);
     transform: rotate(360deg);
@@ -168,70 +191,79 @@ header .icons #menu-bars {
     display: none;
 }
 
-header .icons .material-icons {
-    font-size: 14px;
-}
-
 #search-form {
     position: fixed;
-    top: -110%;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1004;
-    background: rgba(0, 0, 0, .8);
+    top: .7rem;
+    right: 6.5rem;
+    height: 4.5rem;
+    z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 1rem;
 }
 
-#search-form.active {
-    top: 0;
+#search-form .wrapper {
+    text-align: center;
 }
 
-#search-form #search-box {
-    width: 50rem;
-    border-bottom: .1rem solid #fff;
-    padding: 1rem 0;
+#search-form .search {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    border-radius: 50px;
+    background: #eee;
+    transition: 0.4s;
+}
+
+#search-form .search:hover {
+    background: #eee;
+}
+
+#search-form .search .fa-search:hover {
     color: #fff;
-    font-size: 3rem;
+    background: var(--blue);
+    transform: rotate(360deg);
+    transition: .5s;
+}
+
+#search-form .search:hover input,
+#search-form .search.focus input {
+    max-width: 180px;
+}
+
+#search-form .search input {
+    background: transparent;
     text-transform: none;
-    background: none;
+    border: 0;
+    max-width: 0;
+    padding: 0;
+    text-indent: 12px;
+    color: var(--light-color);
+    font-size: 1.7rem;
+    outline: none;
+    transition: 0.4s;
 }
 
-#search-form #search-box::placeholder {
-    color: #eee;
+#search-form .search input::placeholder {
+    color: #ccc;
 }
 
-#search-form #search-box::-webkit-scrollbar-button {
-    -webkit-appearance: none;
-}
-
-#search-form label {
-    color: #fff;
+#search-form .search span {
+    display: grid;
     cursor: pointer;
-    font-size: 3rem;
-}
-
-#search-form label:hover {
-    color: var(--blue);
-}
-
-#search-form #close {
-    position: absolute;
-    color: #fff;
-    cursor: pointer;
-    top: 2rem;
-    right: 3rem;
-    font-size: 3rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--light-color);
+    border-radius: 50%;
+    background: #eee;
 }
 
 .home .home-slider .slide {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 9rem;
     padding-top: 3rem;
     padding-bottom: 6rem;
 }
@@ -418,12 +450,7 @@ header .icons .material-icons {
     color: var(--black);
 }
 
-//
-.order .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
-}
+/*  */
 
 .order .box-container {
     display: grid;
@@ -440,81 +467,6 @@ header .icons .material-icons {
     position: relative;
     overflow: hidden;
     text-align: center;
-}
-
-.order .box-container .box #radioButtonContainer1{
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer2{
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer3{
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer4{
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer5{
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer6{
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer7{
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer8{
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer9{
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer10{
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box .image img {
-    height: 17rem;
-    margin: 1rem 0;
 }
 
 .order .box-container .box .image .fa-heart {
@@ -580,7 +532,7 @@ header .icons .material-icons {
 .order .form .inputBox .input2 {
     display: flex;
     align-items: center;
-    gap; 10px:
+    gap: 10px;
 }
 
 .order .form .inputBox .input span {
@@ -639,12 +591,7 @@ header .icons .material-icons {
     position: relative;
 }
 
-//
-.order .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
-}
+/*  */
 
 .order .box-container {
     display: grid;
@@ -652,82 +599,17 @@ header .icons .material-icons {
     gap: 1.5rem;
 }
 
-.order .box-container .box {
-    padding: 1.5rem;
-    background: #fff;
-    border-radius: .5rem;
-    border: .1rem solid rgba(0, 0, 0, .2);
-    box-shadow: var(--box-shadow);
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-}
-
-.order .box-container .box #radioButtonContainer1{
+.order .box-container .box #radioButtonContainer1,
+.order .box-container .box #radioButtonContainer2,
+.order .box-container .box #radioButtonContainer3,
+.order .box-container .box #radioButtonContainer4,
+.order .box-container .box #radioButtonContainer5,
+.order .box-container .box #radioButtonContainer6,
+.order .box-container .box #radioButtonContainer7,
+.order .box-container .box #radioButtonContainer8,
+.order .box-container .box #radioButtonContainer9,
+.order .box-container .box #radioButtonContainer10 {
     font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer2{
-        font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer3{
-        font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer4{
-        font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer5{
-        font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer6{
-        font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer7{
-        font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer8{
-        font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer9{
-        font-size: 1.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    color: var(--light-color);
-}
-
-.order .box-container .box #radioButtonContainer10{
-        font-size: 1.5rem;
     margin-left: 1rem;
     margin-top: .5rem;
     color: var(--light-color);
@@ -736,57 +618,6 @@ header .icons .material-icons {
 .order .box-container .box .image img {
     height: 17rem;
     margin: 1rem 0;
-}
-
-.order .box-container .box .image .fa-heart {
-    position: absolute;
-    top: 1.5rem;
-    right: 2.5rem;
-    height: 3rem;
-    width: 3rem;
-    line-height: 3rem;
-    text-align: center;
-    font-size: 1.5rem;
-    background: #fff;
-    border-radius: 50%;
-    color: var(--black);
-}
-
-.order .box-container .box .image .fa-heart:hover {
-    background-color: var(--blue);
-    color: #fff;
-}
-
-.order .box-container .box .content {
-    padding: 2rem;
-    padding-top: 0;
-}
-
-.order .box-container .box .content .stars {
-    padding-bottom: 1rem;
-}
-
-.order .box-container .box .content .stars i {
-    font-size: 1.7rem;
-    color: gold;
-}
-
-.order .box-container .box .content h3 {
-    color: var(--black);
-    font-size: 2.5rem;
-}
-
-.order .box-container .box .content p {
-    color: var(--light-color);
-    font-size: 1.6rem;
-    padding: .5rem 0;
-    line-height: 1.5;
-}
-
-.order .box-container .box .content .price {
-    color: var(--blue);
-    margin-left: 1rem;
-    font-size: 2.5rem;
 }
 
 .order .inputBox {
@@ -958,8 +789,9 @@ header .icons .material-icons {
     }
 
     section {
-        padding: 5.5rem 9%;
+        padding: 6.8rem 9%;
     }
+
     .order .box-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -995,20 +827,36 @@ header .icons .material-icons {
         display: block;
         margin: 1rem;
         height: 4.5rem;
-        font-size: 2rem;
+        font-size: 1.7rem;
         text-align: center;
         background: #eee;
     }
 
-    #search-form #search-box {
-        width: 90%;
-        margin: 0 1rem;
+    header i.icons {
+        position: relative;
+        top: -.5rem;
+        right: 0rem;
+        height: 4.5rem;
+        line-height: 4.5rem;
+        margin-left: .5rem;
+        width: 4.5rem;
+        align-items: center;
+        text-align: center;
+        font-size: 2rem;
+        color: var(--light-color);
+        border-radius: 50%;
+        background: #eee;
+    }
+
+    #search-form .search:hover input,
+    #search-form .search.focus input {
+        max-width: 110px;
     }
 
     .home .home-slider .slide .content h3 {
         font-size: 5rem;
     }
-        
+
     .home .home-slider .slide .image img {
         height: 40rem;
     }
@@ -1050,17 +898,9 @@ header .icons .material-icons {
     .order form .inputBox .input {
         width: 0%;
     }
-
-    .review h1.heading {
-        font-size: 2rem;
-    }
-
-    .review h3.sub-heading {
+    
+    .review .slide p {
         font-size: 1.5rem;
-    }
-
-    .review .swiper-slide p {
-        font-size: 1.1rem;
     }
 
     .footer .box-container {
@@ -1086,21 +926,24 @@ header .icons .material-icons {
         font-size: 50%;
     }
 
+    #search-form .search:hover input,
+    #search-form .search.focus input {
+        max-width: 55px;
+    }
+
     .home .home-slider .slide {
         margin: auto;
         display: flex;
         justify-content: center;
-        padding-top: 15rem;
-        padding-bottom: 15rem;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
         text-align: center;
-        padding-top: 20rem;
-        padding-bottom: 6rem;
     }
 
     .home .home-slider .slide .content h3 {
         font-size: 4rem;
     }
-    
+
     .home .home-slider .slide .content span {
         font-size: 2rem;
     }
@@ -1109,16 +952,8 @@ header .icons .material-icons {
         width: 100%;
     }
 
-    .review h1.heading {
+    .review .slide p {
         font-size: 1.5rem;
-    }
-
-    .review h3.sub-heading {
-        font-size: 1.25rem;
-    }
-
-    .review .swiper-slide p {
-        font-size: 0.9rem;
     }
 
     .order .form {
@@ -1128,17 +963,5 @@ header .icons .material-icons {
     .footer .box-container {
         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
         gap: 0.5rem;
-    }
-
-    .footer .box-container .box h3 {
-        font-size: 1.5rem;
-    }
-
-    .footer .box-container .box a {
-        font-size: 1rem;
-    }
-
-    .footer .credit {
-        font-size: 0.6rem;
     }
 }

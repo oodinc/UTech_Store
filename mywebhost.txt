@@ -1,0 +1,7 @@
+Udin-Technology
+Ly(B3&kUTdebSVZ%yerN
+
+dbname:id20588739_udin_technology
+dbuser:id20588739_utech
+dbhost: localhost
+dbpassword: <j9tS=|U\pYhq=0H

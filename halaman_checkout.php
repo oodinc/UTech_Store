@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <!-- css link -->
-    <link rel="stylesheet" href="css/style_Checkout.css">
+    <link rel="stylesheet" href="css/style_checkout.css">
 
 </head>
 
@@ -24,12 +24,12 @@
 
     <!-- header section start -->
     <header>
-        <a href="#home" class="logo"><img src="img/logo.png">UTech Store | Checkout</a>
+        <a href="index.php" class="logo"><img src="img/logo.png">UTech Store | Checkout</a>
     </header>
     <!-- header section end -->
 
     <section class="order" id="order">
-        <form method="POST" action="halaman_checkout.php" id="myForm">
+        <form method="POST" action="halaman_thankyou.php" id="myForm">
             <div class="box-container">
                 <div class="box">
                     <h3>Data Diri Pemesan</h3>
@@ -37,22 +37,22 @@
                         <tr>
                             <td style="text-align: left;">Nama Pemesan</td>
                             <td>:</td>
-                            <td style="text-transform: none; text-align: left;"><?php echo $_POST['nama']; ?></td>
+                            <td style="text-transform: none; text-align: left;" name="namaPemesan"><?php echo $namaPemesan = $_POST['namaPemesan']; ?></td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Alamat</td>
                             <td>:</td>
-                            <td style="text-transform: none; text-align: left;"><?php echo $_POST['alamat']; ?></td>
+                            <td style="text-transform: none; text-align: left;" name="alamat"><?php echo $alamat = $_POST['alamat']; ?></td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">No. WhatsApp</td>
                             <td>:</td>
-                            <td style="text-align: left;"><?php echo $_POST['nomor']; ?></td>
+                            <td style="text-align: left;" name="nomor"><?php echo $nomor = $_POST['nomor']; ?></td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Tanggal dan Waktu Pemesanan</td>
                             <td>:</td>
-                            <td style="text-align: left;"><?php echo $_POST['waktu_pemesanan']; ?></td>
+                            <td style="text-align: left;" name="waktu_pemesanan"><?php echo $waktu_pemesanan = $_POST['waktu_pemesanan']; ?></td>
                         </tr>
                     </table>
                 </div>
@@ -63,7 +63,6 @@
                     <h3>Data Pesanan</h3>
                     <div class="checkout-container">
                         <?php
-                        // proses.php
 
                         // ambil data dari form
                         $jumlahProduk1 = $_POST["jumlahProduk1"];
@@ -332,13 +331,13 @@
 
                         // tampilkan data pesanan dalam bentuk tabel
                         $harga_satuan = array(
-                            "Jus Alpukat" => 7000,
-                            "Jus Apel" => 7000,
-                            "Jus Jambu" => 7000,
-                            "Jus Jeruk" => 7000,
-                            "Jus Nanas" => 7000,
-                            "Jus Semangka" => 7000,
-                            "Jus Stroberi" => 7000,
+                            "Jus Alpukat" => 6000,
+                            "Jus Apel" => 6000,
+                            "Jus Jambu" => 6000,
+                            "Jus Jeruk" => 6000,
+                            "Jus Nanas" => 6000,
+                            "Jus Semangka" => 6000,
+                            "Jus Stroberi" => 6000,
                             "Rujak Buah" => 10000,
                             "Salad Buah" => 10000,
                             "Sop Buah" => 10000
@@ -380,12 +379,16 @@
 </tr>";
 
                         echo "</table>";
-
                         ?>
                     </div>
                 </div>
             </div>
-            <input type="submit" formaction="/halaman_thankYou.php" value="pesan sekarang" class="btn">
+            <input type="hidden" name="namaPemesan" value="<?php echo $namaPemesan ?>">
+            <input type="hidden" name="alamat" value="<?php echo $alamat ?>">
+            <input type="hidden" name="nomor" value="<?php echo $nomor ?>">
+            <input type="hidden" name="waktu_pemesanan" value="<?php echo $waktu_pemesanan ?>">
+
+            <input type="submit" value="pesan sekarang" class="btn">
         </form>
     </section>
 
@@ -395,7 +398,7 @@
 
             <div class="box">
                 <h3>hubungi kami</h3>
-                <a href="http://www.wasap.my/6281909561200" target="_blank">+62 819 0956 1200</a>
+                <a href="http://www.wasap.my/6281909561200" target="_blank" style="text-transform: none;">wa.me/+6281909561200</a>
                 <a href="https://www.instagram.com/direct/t/340282366841710300949128165706432124526" target="_blank" style="text-transform: none;">@m_saifuddin711</a>
                 <a href="mailto:masoodinc1@gmail.com" target="_blank" style="text-transform: none;">masoodinc1@gmail.com</a>
             </div>
@@ -420,7 +423,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <!-- link js -->
-    <script src="js/script_Checkout.js"></script>
+    <script src="js/script_checkout.js"></script>
 
 </body>
 
