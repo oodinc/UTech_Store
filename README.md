@@ -19,6 +19,5 @@ Untuk menggunakan UTech Store, user cukup menginputkan suatu barang yang diingin
 ## Kontak
 Jika ada pertanyaan atau masalah terkait dengan UTech Store, bisa menghubungi melalui:
 
-Instagram: [@m_saifuddin711]([https://pages.github.com/](https://www.instagram.com/direct/t/340282366841710300949128165706432124526)).
-Email: [masoodinc1@gmail.com]([mailto:masoodinc1@gmail.com]).
-This site was built using [GitHub Pages](https://pages.github.com/).
+Instagram: [@m_saifuddin711](https://pages.github.com/](https://www.instagram.com/direct/t/340282366841710300949128165706432124526).
+Email: [masoodinc1@gmail.com](mailto:masoodinc1@gmail.com).
