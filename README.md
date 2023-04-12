@@ -14,7 +14,7 @@ Beberapa fitur pada UTech Store antara lain:
 - Pada bagian kategori produk, jika user menginputkan lebih dari 0 maka user akan diminta untuk menginputkan kategori produk (biasa/es). Input ini akan muncul sesuai dengan jumlah produk yang diinputkan oleh user.
 
 ## Panduan Penggunaan
-Untuk menggunakan UTech Store, user cukup menginputkan suatu barang yang diinginkan dan mengisi form data pribadi. Lalu, tekan tombol "checkout", maka akan dialihkan ke halaman checkout berupa review barang yang akan dipesan tersebut. Jika user menekan tombol `pesan sekarang`, maka data yang ditampilkan dari halaman checkout tersebut akan dikirimkan ke database.
+Untuk menggunakan UTech Store, user cukup menginputkan suatu barang yang diinginkan dan mengisi form data pribadi. Lalu, tekan tombol `checkout`, maka akan dialihkan ke halaman checkout berupa review barang yang akan dipesan tersebut. Jika user menekan tombol `pesan sekarang`, maka data yang ditampilkan dari halaman checkout tersebut akan dikirimkan ke database.
 
 ## Kontak
 Jika ada pertanyaan atau masalah terkait dengan UTech Store, bisa menghubungi melalui:
